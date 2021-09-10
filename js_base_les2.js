@@ -11,7 +11,7 @@ alert(b);                    // 3 - было дано b=1; затем "d=b++" к
 var a = 2;
 var x = 1 + (a *= 2);
 alert(a);                    // 4
-alert(b);                    // 2
+alert(x);                    // 5
 
 //Задание 3.
 var a = 2;
