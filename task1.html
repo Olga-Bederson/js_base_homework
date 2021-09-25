@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Task 1</title>
+</head>
+
+<body>
+
+    <img class="photo" src='img/img1.png' id='image1' />
+    <img class="photo" src='img/img2.png' id='image2' />
+    <img class="photo" src='img/img3.png' id='image3' />
+
+
+    <script>
+        window.onload = function () {
+            var id_images = ['image1', 'image2', 'image3'], image, even = true, imageWidth;
+            for (var i = 0; i < id_images.length; i++) {
+                image = document.getElementById(id_images[i]);
+                imageWidth = image.clientWidth;
+                image.onclick = function (ev, imageWidth) {
+                    return function () {
+                        if (ev) {
+                            this.style.width = imageWidth * 4 + "px";
+                            ev = false;
+                        } else {
+                            this.style.width = imageWidth + "px";
+                            ev = true;
+                        }
+                    }
+                }(even, imageWidth);
+            }
+        };
+    </script>
+</body>
+
+</html>
